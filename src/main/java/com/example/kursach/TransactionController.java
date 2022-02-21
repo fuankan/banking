@@ -6,7 +6,7 @@ import java.sql.Date;
 import java.util.ResourceBundle;
 
 import com.example.kursach.classes.PasswordGenerator;
-import com.example.kursach.classes.Transaction;
+import com.example.kursach.models.Transaction;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -97,11 +97,11 @@ public class TransactionController {
                                                           currency_text, sender_text, receiver_text, code_text,
                                                           transaction_date);
                 dbHandler.insertTransaction(transaction);
-                showAlert("Успешно", "Транзакция выполнена.");
+                showAlert("Success", "Transaction has made.");
                 load_window("index_test.fxml");
                 submit_transaction_button.getScene().getWindow().hide();
             } else {
-                showAlert("Ошибка.", "Пожалуйста, заполните поля.");
+                showAlert("ERROR", "Please, fill the fields.");
             }
         });
     }
